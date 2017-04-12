@@ -13,7 +13,7 @@ import java.util.function.Consumer;
 
 public class ClientCommunicator {
     private static final String SEPARATOR = System.lineSeparator();
-    private static final ExecutorService executor = Executors.newSingleThreadExecutor(r -> {
+    private final ExecutorService executor = Executors.newSingleThreadExecutor(r -> {
                 Thread thread = new Thread(r);
                 thread.setDaemon(true);
                 return thread;
